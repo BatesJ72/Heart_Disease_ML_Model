@@ -1,6 +1,6 @@
 # Heart Disease Machine Learning Project
 
-### Goal: Take data on heart disease and predict if a person is likely to get it. The input portion would be a person putting in data on their lifestyle and it would give them the likelihood that they would develop heart disease.
+### Goal: Take data on heart disease and predict if a person is likely to develop this condition. The input portion of the project will allow a person to input their informationand it would give them the likelihood of developing heart disease.
 
 ### Routes 
 - Home: Explains the project
