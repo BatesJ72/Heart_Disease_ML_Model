@@ -3,12 +3,11 @@
 ### Goal: Take data on heart disease and predict if a person is likely to develop this condition. The input portion of the project will allow a person to input their information and receive a result of the likelihood of developing heart disease.
 
 ### Routes 
-- Home: Explains the project
-- User Input: Users put in their information, and it tells them how likely they are to develop heart disease
-- Visualization(s)
-- Data Information: Explanation of what model was chosen and why. Dictionary of terms (i.e. exercise induced angina). Limitations of dataset. 
+- Home: Explains the project. Users put in their information, and it tells them how likely they are to develop heart disease
+- Ghost route to transfer data between front end and back end
+- Data Information: Visualization(s). Explanation of what model was chosen and why. Dictionary of terms (i.e. exercise induced angina). Limitations of dataset. 
 
-#### Workflow
+### Workflow
 (1a) Data wrangling and writing ML code: Loading/cleaning the data first to prep it to go into a ML model, then determine the best model. <br>
 (1b) Design the basic frontend/flask app: The frontend/flask app could be developed in parallel with data wrangling, since we can plug in the actual data once we finish the ML part. <br>
 (2) Design the user input section: Once we know what the important factors are for ML we could design the user input section. For example, there are 14 factors listed in the heart disease data, but if 3-4 are highly correlated then we would want the input focused on those rather than all 14.  <br>
