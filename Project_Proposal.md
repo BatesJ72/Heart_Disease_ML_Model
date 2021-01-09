@@ -18,7 +18,7 @@
 ### Data
 https://www.kaggle.com/cherngs/heart-disease-cleveland-uci
  <br> <br>
-Data Attributes:  <br>
+<i>Data Attributes  </i><br>
 age: age in years <br>
 sex: sex (1 = male; 0 = female) <br>
 cp: chest pain type <br>
