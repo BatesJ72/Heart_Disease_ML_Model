@@ -42,3 +42,9 @@ slope: the slope of the peak exercise ST segment <br>
 ca: number of major vessels (0-3) colored by flourosopy <br>
 thal: 0 = normal; 1 = fixed defect; 2 = reversable defect <br>
 condition: 0 = no disease, 1 = disease <br>
+
+
+
+Notes from Ed:
+It's important to know the why - why did the person get heart disease? Use something like Lime or Shap to determine "causality".
+Try to get a working prototype asap. No need for a database - just use the CSV. 
