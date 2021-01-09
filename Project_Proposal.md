@@ -9,11 +9,11 @@
 - Data Information: Explanation of what model was chosen and why. Dictionary of terms (i.e. exercise induced angina). Limitations of dataset. 
 
 #### Workflow
-(1a) Data wrangling and writing ML code: Loading/cleaning the data first to prep it to go into a ML model, then determine the best model. 
-(1b) Design the basic frontend/flask app: The frontend/flask app could be developed in parallel with data wrangling, since we can plug in the actual data once we finish the ML part.
-(2) Design the user input section: Once we know what the important factors are for ML we could design the user input section. For example, there are 14 factors listed in the heart disease data, but if 3-4 are highly correlated then we would want the input focused on those rather than all 14. 
-(3) Finish the frontend/flask app with the competed analysis
-(4) Develop visuals: Once all the analysis is done, we'll develop visualization(s).
+(1a) Data wrangling and writing ML code: Loading/cleaning the data first to prep it to go into a ML model, then determine the best model. <br>
+(1b) Design the basic frontend/flask app: The frontend/flask app could be developed in parallel with data wrangling, since we can plug in the actual data once we finish the ML part. <br>
+(2) Design the user input section: Once we know what the important factors are for ML we could design the user input section. For example, there are 14 factors listed in the heart disease data, but if 3-4 are highly correlated then we would want the input focused on those rather than all 14.  <br>
+(3) Finish the frontend/flask app with the competed analysis <br>
+(4) Develop visuals: Once all the analysis is done, we'll develop visualization(s). <br>
 
 ### Data
 https://www.kaggle.com/cherngs/heart-disease-cleveland-uci
