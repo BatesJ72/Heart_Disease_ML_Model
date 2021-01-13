@@ -7,7 +7,7 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}"> -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/style.css') }}"> -->
     <!-- <script src="{{ url_for('static', filename='js/parallax.min.js') }}"></script> -->
     <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheets/newstyle.css') }}"> -->
     <title>Project 3</title>
@@ -17,7 +17,18 @@
     <div class="header">
         <br>
         <h1 class="text-center">Heart Disease Predictor</h1> 
-          
+        <nav>
+            <ul>
+                <li><a href="#">
+                    Home
+                </a></li>
+                <li> | </li>
+                <li><a href="#">
+                    About our model
+                </a></li>
+            </ul>
+        </nav>
+        <hr>
         
         
       
@@ -30,7 +41,7 @@
 
 
     {% block content %}{% endblock%}
-    <!-- <script src="{{ url_for('static', filename='js/data.js') }}"></script>
+    <!-- <script src="{{ url_for('static', filename='js/data.js') }}"></script> -->
     <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
     
 </body>
