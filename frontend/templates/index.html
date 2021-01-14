@@ -16,8 +16,8 @@
                 <label for="sex">What sex were you assigned at birth?</label>
                 <br>
                 <select name="sex" id="sex">
-                        <option value="M">Male</option>
-                        <option value="F">Female</option>
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
                 </select>
                 <br>
                 <label for="cp">Are you experiencing chest pain? If so, what type?</label>
@@ -37,12 +37,12 @@
                 <br>
                 <input type="number" id="chol" name="chol">
                 <br>
-                <label for="fps">Is your fasting blood pressure greater than 120? </label>
+                <label for="fbs">Is your fasting blood pressure greater than 120? </label>
                 <br>
-                <select id="fps" name="fps">
+                <select id="fbs" name="fbs">
                         <option value=0>Yes</option>
                         <option value=1>No</option>
-                        <option value=3>Not Sure</option>
+                        
                 </select>
                 <br>
                 <label for="restecg">What are your electrocardiographic results? </label>
@@ -66,12 +66,40 @@
                         <option value=3>Not Sure</option>
                 </select>
                 <br>
+                <label for="oldpeak">What is you ST depression induced by exercise relative to rest? </label>
                 <br>
+                <input type="number" id="oldpeak" name="oldpeak">
+                <br>                
+                <label for="slope">Is your slope of peak exercise ST semgent either upsloping or downsloping? </label>
+                <br>
+                <select id="slope" name="slope">
+                        <option value=0>Upsloping</option>
+                        <option value=1>Downsloping</option>
+                </select>
+                <br>
+                <label for="ca">How many major vessels colored by flourosopy? (0-3) </label>
+                <br>
+                <select id="ca" name="ca">
+                        <option value=0>0</option>
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                </select>
+                <br>
+                <label for="thal">Do you have Thalassemia? If so, do you experience a fixed defect or a reversed defect? </label>
+                <br>
+                <select id="thal" name="thal">
+                        <option value=0>I do not have Thalassemia</option>
+                        <option value=1>Fixed defect</option>
+                        <option value=2>Reversable defect</option>
+                </select>
+                <br>
+
                 <input type="submit" id="submit">
         </div>
 </div>
 
-<div class="result-box" style="display:none">
+<div class="result-box" style="display: none">
         <h1>results here</h1>
 
 

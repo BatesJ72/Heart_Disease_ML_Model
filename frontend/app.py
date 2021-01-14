@@ -16,7 +16,7 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
 
-    if request.method == "POST": 
+    # if request.method == "POST": 
         
         # chol = int(request.form[chol])
         # values = [chol, value, value, value]
@@ -33,7 +33,8 @@ def index():
         #     output_message = specificy here
     
         
-    return render_template("index.html", output_message)
+    # return render_template("index.html", output_message)
+    return render_template("index.html")
     
 
 @app.route("/visuals")
