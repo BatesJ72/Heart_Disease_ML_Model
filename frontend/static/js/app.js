@@ -2,7 +2,6 @@
 
 document.getElementById("submit").addEventListener("click", function()
 {
-    console.log("submit-button-clicked")
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++ DECLARE VARIABLES
     let age = d3.select("#age").property("value")
@@ -131,10 +130,11 @@ document.getElementById("submit").addEventListener("click", function()
 
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++ LOAD RESULTS DIV
 
-    
-});
-
-
-
-
-
+    let resultBox = document.getElementById("result-box")
+ 
+        if (resultBox.style.display == "none")
+        {
+            return resultBox.style.display = "block";
+        }
+        
+})
