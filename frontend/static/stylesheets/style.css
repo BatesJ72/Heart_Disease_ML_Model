@@ -61,3 +61,19 @@ nav a:hover {
     padding: 20px;
 
 }
+
+/* RESULTS BOX
++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+.result-box h2 {
+    
+    background-color: white;
+    margin: 5px;
+}
+
+
+.result-box {
+    background-color: darkgray;
+    padding: 20px;
+    margin-top: 10px; 
+}
