@@ -1,4 +1,4 @@
-from flask import flask
+from flask import Flask, request, jsonify
 import joblib
 
 app = Flask(__name__)
@@ -16,8 +16,9 @@ def status():
 
 @app.route("/classify", methods=["POST"])
 def classify():
-    data_dict = request.get_json()
 
+    data_dict = request.get_json()
+ 
     age = data_dict['age'], 
     sex = data_dict['sex'], 
     cp = data_dict['cp'], 
@@ -27,13 +28,19 @@ def classify():
     thalach = data_dict['thalach'], 
     exang = data_dict['exang']
     
-    return jsonify{
-        "age" = age, 
-        "sex" = sex, 
-        "cp" = cp, 
-        "trestbps" = trestbps, 
-        "chol" = chol, 
-        "fbs" = fbs, 
-        "thalach" = thalach, 
-        "exang" = exang
-    }
+    prediction = predict_heart_disease(age, sex, cp, trestbps, chol, fbs, thalach, exang)
+
+    return jsonify({
+        "age": age, 
+        "sex": sex, 
+        "cp": cp, 
+        "trestbps": trestbps, 
+        "chol": chol, 
+        "fbs": fbs, 
+        "thalach": thalach, 
+        "exang": exang,
+        "prediction": bool(prediction)
+    })
+
+if __name__ == "__main__":
+    app.run(debug=True)
