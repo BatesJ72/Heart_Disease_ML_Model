@@ -1,5 +1,5 @@
 import os
-from flask import Flask, jsonify, render_template, request, make_response
+from flask import Flask, jsonify, render_template, request, make_response, url_for, redirect
 # import requests
 # import json
 import pandas as pd
@@ -8,44 +8,40 @@ import numpy as np
 
 app = Flask(__name__)
 
-# MODEL SHOULD OPEN HERE
-# with open(f"randomforest.pickle, 'rb'") as model:
-#   scaler = pickle.load(model) 
+# model = 
 
+def predict_disease(input_data, model):
+    x = input_data
+#  pass x to the model
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    
 
-    # if request.method == "POST": 
+    if request.method == "POST": 
         
-        # chol = int(request.form[chol])
-        # values = [chol, value, value, value]
 
-        # data = pd.Dataframe(np.array([values])
-        # scaled_values = scaler.transform(data)
+        age = request.form["age"]
+        sex = request.form["sex"]
+        cp = request.form["cp"]
+        fbs = request.form["fbs"]
+        trestbps = request.form["trestbps"]
+        chol = request.form["chol"]
+        thalach = request.form["thalach"]
+        exang = request.form["exang"]
 
-        # results = model.predict(scaled_values)
-
-        # if results == 1:
-        #     output_message = "you have heart disease" 
-
-        # else
-        #     output_message = specificy here
-    
+        input_data = [age, sex, cp, fbs, trestbps, chol, thalach, exang]
         
-    # return render_template("index.html", output_message)
-    return render_template("index.html")
-    
+        print(input_data)
+
+#   ml function
+
+        return render_template("results.html", display = "block")
+    else: 
+        return render_template("results.html", display = "none")
 
 @app.route("/visuals")
 def visual():
     return render_template("visual.html")
-
-
-@app.route("/ghostboy")
-def you_dont_see_me():
-    return "im gonna disappear!"
 
 
 if __name__ == "__main__":
