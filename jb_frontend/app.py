@@ -57,7 +57,8 @@ def index():
         #     "fbs": int(fbs), 
         #     "thalach": int(thalach), 
         #     "exang": int(exang),
-        #     # "prediction": bool(prediction)
+
+       #     # "prediction": bool(prediction)
         # })
 
         print(input_data)
@@ -99,6 +100,7 @@ def new_route():
     # print("end3")
     
     print(predict_heart_disease(data))
+    print("end3")
 
     return render_template("visual.html")
 
