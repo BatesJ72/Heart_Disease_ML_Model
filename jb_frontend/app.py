@@ -66,16 +66,21 @@ def index():
         for i in input_data:
             for d in i:
                 e = int(d)
-                print(e)
-                print(f"type: {type(e)}")
+                # print(e)
+                # print(f"type: {type(e)}")
                 data.append(e)
-
-        
 
         print("end")
 
         print(data)
         print("end2")
+
+        result = predict_heart_disease(data)
+
+        print(predict_heart_disease(data))
+        print("end3")
+
+
 
         return render_template("results.html", display = "block")
     else: 
@@ -89,7 +94,7 @@ def visual():
 
 
 
-@app.route("/predict")
+@app.route("/predict", methods=["POST", "GET"])
 def new_route():
 
     # print(data)
@@ -97,16 +102,15 @@ def new_route():
     # for i in data:
     #     print(type(i))
 
-    # print("end3")
-    
+    result = predict_heart_disease(data)
+
     print(predict_heart_disease(data))
     print("end3")
 
-    return render_template("visual.html")
-
-    # return predict_heart_disease(data)
-
     
+    return result
+
+        
 
      
 
