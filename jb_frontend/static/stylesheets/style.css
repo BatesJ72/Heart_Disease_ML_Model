@@ -77,25 +77,3 @@ nav a:hover {
     padding: 20px;
     margin-top: 10px; 
 }
-
-
-/* VISUAL BOX 
-++++++++++++++++++++++++++++++++++++++++++++++++ */
-
-.visual-box {
-    margin-top: 100px;
-    background-color: darkgray;
-    padding: 20px;
-}
-
-.visual-box h2 {
-    text-align: center;
-    background-color: white;
-    margin: 5px;
-}
-
-/* .input-box {
-    background-color: darkgray;
-    padding: 20px;
-
-} */
