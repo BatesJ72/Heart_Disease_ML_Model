@@ -5,6 +5,7 @@ from flask import Flask, jsonify, render_template, request, make_response, url_f
 import pandas as pd
 import numpy as np
 import joblib
+import plotly
 
 app = Flask(__name__)
 
