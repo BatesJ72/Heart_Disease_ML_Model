@@ -1,7 +1,15 @@
-
+// function validateForm() {
+//     var x = document.forms["myForm"]["age"].value;
+//     if (x == "") {
+//       alert("Age must be filled out");
+//       return false;
+//     }
+//   }
 
 document.getElementById("submit").addEventListener("click", function()
 {
+
+    
 
 // // ++++++++++++++++++++++++++++++++++++++++++++++++++++++ DECLARE VARIABLES
 //     let age = d3.select("#age").property("value")
