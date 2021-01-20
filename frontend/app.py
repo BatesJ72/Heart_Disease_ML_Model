@@ -15,16 +15,12 @@ clf = joblib.load("../backend/clf.joblib")
 model_input =[]
 
 def predict_heart_disease(input_data):
-    for i in input_data:
-        model_input.append(i)
-    return clf.predict([model_input])[0]
+    return clf.predict([data_input])[0]
 
 input_data = []
+data_input = []
 
 
-# def predict_disease(input_data, model):
-#     x = input_data
-# #  pass x to the model
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -41,28 +37,20 @@ def index():
         exang = request.form["exang"]
 
         input_data.append([age, sex, cp, fbs, trestbps, chol, thalach, exang])
-        
-        # for i in input_data:
-        #     for d in i:
-        #         print(type(d))
     
-        prediction = predict_heart_disease(input_data)
+        for i in input_data:
+            for d in i:
+                e = int(d)
+                data_input.append(e)
+        
+        data = predict_heart_disease(data_input)
 
-        print({
-            "age": int(age), 
-            "sex": bool(sex), 
-            "cp": int(cp), 
-            # "trestbps": int(trestbps), 
-            # "chol": int(chol), 
-            "fbs": int(fbs), 
-            # "thalach": int(thalach), 
-            "exang": int(exang),
-            "prediction": bool(prediction)
-    })
+        if data == 1:
+            data = "You are at risk! Take heed!"
+        else:
+            data = "All good bro!"
 
-#   ml function
-
-        return render_template("results.html", display = "block")
+        return render_template("results.html", display = "block", data=data)
     else: 
         return render_template("results.html", display = "none")
 
