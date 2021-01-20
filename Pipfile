@@ -10,6 +10,8 @@ flask = "*"
 pandas = "*"
 scikit-learn = "==0.24.0"
 joblib = "==1.0.0"
+image = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.9"

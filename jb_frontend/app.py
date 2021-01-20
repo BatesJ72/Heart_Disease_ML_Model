@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import joblib
 
+
 app = Flask(__name__)
 
 clf = joblib.load("../backend/clf.joblib")
@@ -16,11 +17,11 @@ clf = joblib.load("../backend/clf.joblib")
 #     return clf.predict([model_input])[0]
 
 def predict_heart_disease(input_data):
-    return clf.predict([data])[0]
+    return clf.predict([data_input])[0]
     
 
 input_data = []
-data = []
+data_input = []
 
 
 # def predict_disease(input_data, model):
@@ -68,21 +69,26 @@ def index():
                 e = int(d)
                 # print(e)
                 # print(f"type: {type(e)}")
-                data.append(e)
+                data_input.append(e)
 
         print("end")
 
-        print(data)
+        print(data_input)
         print("end2")
 
-        result = predict_heart_disease(data)
+        data = predict_heart_disease(data_input)
 
-        print(predict_heart_disease(data))
+        if data == 1:
+            data = "You are at risk! Take heed!"
+        else:
+            data = "All good bro!"
+
+        print(predict_heart_disease(data_input))
         print("end3")
 
 
 
-        return render_template("results.html", display = "block")
+        return render_template("results.html", display = "block", data=data)
     else: 
         return render_template("results.html", display = "none")
 
@@ -102,13 +108,14 @@ def new_route():
     # for i in data:
     #     print(type(i))
 
-    result = predict_heart_disease(data)
+    result = predict_heart_disease(data_input)
 
-    print(predict_heart_disease(data))
+    print(predict_heart_disease(data_input))
     print("end3")
 
-    
-    return result
+  
+
+    return shape("results.html")
 
         
 
