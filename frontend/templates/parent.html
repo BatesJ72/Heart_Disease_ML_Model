@@ -19,13 +19,9 @@
         <h1 class="text-center">Heart Disease Predictor</h1> 
         <nav>
             <ul>
-                <li><a href="#">
-                    Home
-                </a></li>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li> | </li>
-                <li><a href="#">
-                    About our model
-                </a></li>
+                <a href="{{ url_for('visual') }}">About Our Model</a></li>
             </ul>
         </nav>
         <hr>
