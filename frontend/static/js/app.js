@@ -4754,84 +4754,260 @@ data = [
     }
   ]
 
+// NEW DATA +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++//
+  age_data = [
+    {
+      "age": 25,
+      "total_records": 1,
+      "condition": 0,
+      "percent": 0
+    },
+    {
+      "age": 30,
+      "total_records": 6,
+      "condition": 2,
+      "percent": 33.33333333333333
+    },
+    {
+      "age": 35,
+      "total_records": 10,
+      "condition": 4,
+      "percent": 40
+    },
+    {
+      "age": 40,
+      "total_records": 44,
+      "condition": 9,
+      "percent": 20.454545454545457
+    },
+    {
+      "age": 45,
+      "total_records": 31,
+      "condition": 13,
+      "percent": 41.935483870967744
+    },
+    {
+      "age": 50,
+      "total_records": 54,
+      "condition": 19,
+      "percent": 35.18518518518518
+    },
+    {
+      "age": 55,
+      "total_records": 72,
+      "condition": 46,
+      "percent": 63.888888888888886
+    },
+    {
+      "age": 60,
+      "total_records": 46,
+      "condition": 28,
+      "percent": 60.86956521739131
+    },
+    {
+      "age": 65,
+      "total_records": 27,
+      "condition": 15,
+      "percent": 55.55555555555556
+    },
+    {
+      "age": 70,
+      "total_records": 4,
+      "condition": 0,
+      "percent": 0
+    },
+    {
+      "age": 75,
+      "total_records": 2,
+      "condition": 1,
+      "percent": 50
+    }
+  ]
+// CHOL DATA +++++++++++++++++++++++++++++++++++++++
+   
+  chol_data = [
+    {
+      "chol": 150,
+      "record_count": 44,
+      "with_hd": 19,
+      "percent": 43.18181818181818
+    },
+    {
+      "chol": 200,
+      "record_count": 121,
+      "with_hd": 47,
+      "percent": 38.84297520661157
+    },
+    {
+      "chol": 250,
+      "record_count": 83,
+      "with_hd": 48,
+      "percent": 57.831325301204814
+    },
+    {
+      "chol": 300,
+      "record_count": 36,
+      "with_hd": 18,
+      "percent": 50
+    },
+    {
+      "chol": 350,
+      "record_count": 4,
+      "with_hd": 1,
+      "percent": 25
+    },
+    {
+      "chol": 400,
+      "record_count": 3,
+      "with_hd": 2,
+      "percent": 66.66666666666666
+    },
+    {
+      "chol": 450,
+      "record_count": 0,
+      "with_hd": 0,
+      "percent": ""
+    },
+    {
+      "chol": 500,
+      "record_count": 0,
+      "with_hd": 0,
+      "percent": ""
+    },
+    {
+      "chol": 550,
+      "record_count": 1,
+      "with_hd": 0,
+      "percent": 0
+    }
+  ]
 
-// WHY CANT I LOAD THE DATA IN THIS WAY 
-// d3.json("../static/data.json"), data => { 
-//     console.log(data)}
+
+// ++++++++++++++++++++ Line charts of age versus cholesterol
+// ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+let percent = age_data.map(d => d.percent)
+
+let condition = age_data.map(d => d.condition)
+
+let age = age_data.map(d => d.age)
+
+let total_records = age_data.map(d => d.total_records)
+
+let chol_percent = chol_data.map(d => d.percent)
+
+let chol_condition = chol_data.map(d => d.with_hd)
+
+let chol = chol_data.map(d => d.chol)
+
+let chol_total_records = chol_data.map(d => d.record_count)
+
+let withHD = data.filter(d => d.condition === 1)
+
+let withoutHD = data.filter(d => d.condition === 0)
+
+let scatterCondition = withHD.map(d => d.condition)
+
+let scatterAge = withHD.map(d => d.age)
+let scatterChol = withHD.map(d => d.chol)
+let scatterAgeNoDisease = withoutHD.map(d => d.age)
+let scatterCholNoDisease = withoutHD.map(d => d.chol)
+
+console.log(scatterCondition)
 
 
+d3.selectAll("body").on("change", updatePage);
 
-// function init_build() {
-// init_build();
-// function buildChart() {
-// }
+function updatePage(){
+  let dropdownmenu = d3.selectAll("#visualDropDown").node();
+  let dropdownID = dropdownmenu.id;
+  let selectedOption = dropdownmenu.value;
 
+  if (selectedOption === "age") {
+    x = age,
+    x2 = age,
+    y = condition,
+    y2 = total_records
+    name = "Total with Heart Disease",
+    name2 = "Total Surveyed",
+    xAxis = {"title" : 'Age'}
+    type = "line",
+    mode = "lines"
+  }
 
+  else if (selectedOption === "chol") {
+    x = chol,
+    x2 = chol,
+    y = chol_condition,
+    y2 = chol_total_records
+    name = "Total with Heart Disease",
+    name2 = "Total Surveyed",
+    xAxis = {"title" : 'Cholesterol Level'}
+    type = "line"
+    mode = "lines"
+  }
 
-// Take percentage of people with vs without for each age/chol bin 
-// bin by age 
-// take total counts by age, divide by people with disease 
-
-
-
-let thirties1 = data.filter(d => d.age >=30)
-let thirties = thirties1.filter(d =>d.age <40)
-console.log("30s", thirties)
-
-let forties1 = data.filter(d => d.age >=40)
-let forties = forties1.filter(d =>d.age <50)
-console.log("40s", forties)
-
-let fifties1 = data.filter(d => d.age >=50)
-let fifties = fifties1.filter(d =>d.age <60)
-console.log("50s", fifties)
-
-let sixties1 = data.filter(d => d.age >=60)
-let sixties = sixties1.filter(d =>d.age <70)
-console.log("60s", sixties)
-
-let seventies1 = data.filter(d => d.age >=70)
-let seventies = seventies1.filter(d =>d.age <80)
-console.log("70s", seventies)
-
-// let thirtiesCount = 0
-
-// for (var i=0, l=thirties.length; i<l; thirtiesCount++) {
-//   console.log(thirtiesCount)
-// }
-
-// console.log(thirtiesCount)
-
-
-let condition = data.map(d => d.condition)
-// console.log(condition)
+  else if (selectedOption === "age_vs_chol") {
+    x = scatterAge,
+    x2 = scatterAgeNoDisease
+    y = scatterCholNoDisease,
+    y2 = scatterChol,
+    name = "With Heart Disease",
+    name2 = "Without Heart Disease",
+    xAxis = {"title" : 'Age'}
+    type = "scatter",
+    mode = "markers"
+  }
 
 
-let filteredData = data.filter(item => item.condition == 1 )
-// console.log("Filtered Data", filteredData)
+  let trace1 = { 
+    x: x,
+    y: y,
+    name: name,
+    pageLayout: xAxis,
+    type: type,
+    mode: mode
+    }
 
-let age = filteredData.map(d => d.age)
+  let trace2 = { 
+      x: x2,
+      y: y2,
+      name: name2,
+      pageLayout: xAxis,
+      type: type,
+      mode: mode
+      }
 
-let chol = filteredData.map(d => d.chol)
+    let pageLayout
+    let plotData = [trace2, trace1]
+
+Plotly.newPlot("myPlot", plotData, pageLayout)
+
+}
 
 
-
-let plotLayout = {
-    title: "Effect of Age"
+// For default page
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++
+let plotLayoutAge = {
+    title: "Age and Heart Disease"
 }
 
 let trace1 = { 
-    type: 'histogram',
     x: age,
-    name: "Age"
+    y: condition,
+    name: "Total with Heart Disease"
     }
 
 let trace2 = { 
-    type: 'histogram',
-    x: chol,
-    name: "Cholesterol"
+    // type: 'histogram',
+    x: age,
+    y: total_records,
+    name: "Total Surveyed"
     }
 
-let plotData = [trace1]
+let plotData = [trace2, trace1]
 
-Plotly.newPlot("myPlot", plotData, plotLayout)
+Plotly.newPlot("myPlot", plotData, plotLayoutAge)
+
+
