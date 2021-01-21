@@ -4761,11 +4761,6 @@ data = [
 
 
 
-
-
-
-// Line chart comparing age and heart disease effect on condition, toggle menu between them 
-
 // function init_build() {
 // init_build();
 // function buildChart() {
@@ -4773,22 +4768,51 @@ data = [
 
 
 
+// Take percentage of people with vs without for each age/chol bin 
+// bin by age 
+// take total counts by age, divide by people with disease 
+
+
+
+let thirties1 = data.filter(d => d.age >=30)
+let thirties = thirties1.filter(d =>d.age <40)
+console.log("30s", thirties)
+
+let forties1 = data.filter(d => d.age >=40)
+let forties = forties1.filter(d =>d.age <50)
+console.log("40s", forties)
+
+let fifties1 = data.filter(d => d.age >=50)
+let fifties = fifties1.filter(d =>d.age <60)
+console.log("50s", fifties)
+
+let sixties1 = data.filter(d => d.age >=60)
+let sixties = sixties1.filter(d =>d.age <70)
+console.log("60s", sixties)
+
+let seventies1 = data.filter(d => d.age >=70)
+let seventies = seventies1.filter(d =>d.age <80)
+console.log("70s", seventies)
+
+// let thirtiesCount = 0
+
+// for (var i=0, l=thirties.length; i<l; thirtiesCount++) {
+//   console.log(thirtiesCount)
+// }
+
+// console.log(thirtiesCount)
+
 
 let condition = data.map(d => d.condition)
-console.log(condition)
-
-let age = data.map(d => d.age)
-
-let arr2 = [1]
-
-let ageFiltered = age.filter(item => !arr2.includes(item))
-
-let chol = data.map(d => d.chol)
-
-console.log(age)
-console.log(chol)
+// console.log(condition)
 
 
+let filteredData = data.filter(item => item.condition == 1 )
+// console.log("Filtered Data", filteredData)
+
+let age = filteredData.map(d => d.age)
+
+let chol = filteredData.map(d => d.chol)
 
 
 
@@ -4796,10 +4820,16 @@ let plotLayout = {
     title: "Effect of Age"
 }
 
-let trace1 = {
+let trace1 = { 
     type: 'histogram',
-    x: ageFiltered,
+    x: age,
     name: "Age"
+    }
+
+let trace2 = { 
+    type: 'histogram',
+    x: chol,
+    name: "Cholesterol"
     }
 
 let plotData = [trace1]
