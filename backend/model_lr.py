@@ -3,12 +3,6 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.metrics import classification_report
-from sklearn.metrics import accuracy_score
-from sklearn.dummy import DummyClassifier
-from sklearn.metrics import confusion_matrix
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import make_pipeline
@@ -49,7 +43,7 @@ df = df.assign(
 target = "condition"
 
 y = df["condition"].values
-X = df.drop("condition", axis=1).values
+X = df.drop("condition", axis=1)
 
 cf = ColumnTransformer(
     [
