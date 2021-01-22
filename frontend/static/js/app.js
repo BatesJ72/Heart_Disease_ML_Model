@@ -4914,7 +4914,79 @@ let scatterChol = withHD.map(d => d.chol)
 let scatterAgeNoDisease = withoutHD.map(d => d.age)
 let scatterCholNoDisease = withoutHD.map(d => d.chol)
 
-console.log(scatterCondition)
+let pageLayout
+
+let plotLayoutAge = {
+  title: "Age and Heart Disease",
+  xaxis: {
+    title: {
+      text: 'Age',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'Number Surveyed',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+}
+
+let plotLayoutChol = {
+title: "Cholesterol and Heart Disease",
+xaxis: {
+  title: {
+    text: 'Cholesterol',
+    font: {
+      family: 'Courier New, monospace',
+      size: 18,
+      color: '#7f7f7f'
+    }
+  },
+},
+yaxis: {
+  title: {
+    text: 'Number Surveyed',
+    font: {
+      family: 'Courier New, monospace',
+      size: 18,
+      color: '#7f7f7f'
+    }
+  },
+},
+}
+
+let plotLayoutCholAge = {
+  title: "Cholesterol and Heart Disease",
+  xaxis: {
+    title: {
+      text: 'Age',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'Cholesterol',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  }
 
 
 d3.selectAll("body").on("change", updatePage);
@@ -4933,7 +5005,8 @@ function updatePage(){
     name2 = "Total Surveyed",
     xAxis = {"title" : 'Age'}
     type = "line",
-    mode = "lines"
+    mode = "lines",
+    pageLayout = plotLayoutAge
   }
 
   else if (selectedOption === "chol") {
@@ -4944,8 +5017,9 @@ function updatePage(){
     name = "Total with Heart Disease",
     name2 = "Total Surveyed",
     xAxis = {"title" : 'Cholesterol Level'}
-    type = "line"
-    mode = "lines"
+    type = "line",
+    mode = "lines",
+    pageLayout = plotLayoutChol
   }
 
   else if (selectedOption === "age_vs_chol") {
@@ -4957,7 +5031,9 @@ function updatePage(){
     name2 = "Without Heart Disease",
     xAxis = {"title" : 'Age'}
     type = "scatter",
-    mode = "markers"
+    mode = "markers",
+    pageLayout = plotLayoutCholAge
+
   }
 
 
@@ -4979,7 +5055,7 @@ function updatePage(){
       mode: mode
       }
 
-    let pageLayout
+    
     let plotData = [trace2, trace1]
 
 Plotly.newPlot("myPlot", plotData, pageLayout)
@@ -4989,9 +5065,7 @@ Plotly.newPlot("myPlot", plotData, pageLayout)
 
 // For default page
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++
-let plotLayoutAge = {
-    title: "Age and Heart Disease"
-}
+
 
 let trace1 = { 
     x: age,
