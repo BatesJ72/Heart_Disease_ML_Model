@@ -1,6 +1,10 @@
 /* All
 ++++++++++++++++++++++++++++++++++++++++++++++++ */
 
+/* * {
+    font-family: raleway;
+} */
+
 main {
 
     height: 120vh;
@@ -18,7 +22,7 @@ main {
     top: 0px;
     width: 100vw;
     background-color: white;
-    
+    z-index: 1;
 }
 
 nav ul {
@@ -99,3 +103,13 @@ nav a:hover {
     padding: 20px;
 
 } */
+
+
+.visualDropDown {
+    z-index: -1;
+}
+
+
+label {
+    color: white;
+}
