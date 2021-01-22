@@ -108,3 +108,8 @@ nav a:hover {
 .visualDropDown {
     z-index: -1;
 }
+
+
+label {
+    color: white;
+}
