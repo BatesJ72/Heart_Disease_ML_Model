@@ -72,24 +72,24 @@ def index():
             for key, value in i.items():
                 if key == 'age':
                     value = int(value)
-                    data_input.append(value)
+                    data_input.update(key, value)
                 if key == "sex":
-                    data_input.append(value)
+                    data_input.update(key, value)
                 if key == "cp": 
-                    data_input.append(value)
+                    data_input.update(key, value)
                 if key == "trestbps":
                     value = int(value)
-                    data_input.append(value)
+                    data_input.update(key, value)
                 if key == "chol":
                     value = int(value)
-                    data_input.append(value)
+                    data_input.update(key, value)
                 if key == "fbs": 
-                    data_input.append(value)
+                    data_input.update(key, value)
                 if key == "thalach":
                     value = int(value)
-                    data_input.append(value)
+                    data_input.update(key, value)
                 if key == "exang": 
-                    data_input.append(value)
+                    data_input.update(key, value)
     
     
         data = predict_heart_disease(data_input)
