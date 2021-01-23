@@ -13,18 +13,23 @@ app = Flask(__name__)
 
 clf = joblib.load("../backend/clf.joblib")
 
-model_input =[]
+# model_input =[]
 
-def predict_heart_disease(input_data):
+
+
+
+def predict_heart_disease(data_input):
     return clf.predict([data_input])[0]
 
-input_data = []
-data_input = []
+
+
 
 
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    input_data = []
+    data_input = []
 
     if request.method == "POST": 
 
