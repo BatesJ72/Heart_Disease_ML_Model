@@ -50,13 +50,13 @@ def index():
         
         data_input = pd.DataFrame(
             {
-                "age": int(age),
+                "age": age,
                 "sex": sex,
                 "cp": cp,
-                "trestbps": int(trestbps),
-                "chol": int(chol),
+                "trestbps": trestbps,
+                "chol": chol,
                 "fbs": fbs,
-                "thalach": int(thalach),
+                "thalach": thalach,
                 "exang": exang,
             })
         
