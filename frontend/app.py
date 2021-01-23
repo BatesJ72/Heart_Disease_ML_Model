@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 # model = 
 
-clf = joblib.load("../backend/clf.joblib")
+clf = joblib.load(os.path.join("backend", "clf.joblib"))
 
 # model_input =[]
 
