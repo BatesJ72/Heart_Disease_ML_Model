@@ -63,4 +63,4 @@ lr_pipeline = make_pipeline(cf, LogisticRegression())
 lr_pipeline.fit(X, y)
 
 # create joblib file
-joblib.dump(lr_pipeline, "clf.joblib")
+# joblib.dump(lr_pipeline, "clf.joblib")
