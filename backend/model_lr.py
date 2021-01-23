@@ -58,9 +58,9 @@ cf = ColumnTransformer(
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42, stratify=y)
 
 # train model 
-lr_pipeline = make_pipeline(cf, LogisticRegression())
+lr_pipeline = make_pipeline(cf, LogisticRegression(max_iter=1000))
 
 lr_pipeline.fit(X, y)
 
 # create joblib file
-# joblib.dump(lr_pipeline, "clf.joblib")
+joblib.dump(lr_pipeline, "clf.joblib")

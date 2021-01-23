@@ -9,27 +9,17 @@ import plotly
 
 app = Flask(__name__)
 
-# model = 
 
 clf = joblib.load(os.path.join("backend", "clf.joblib"))
-
-# model_input =[]
-
-
-
 
 def predict_heart_disease(data_input):
     return clf.predict([data_input])[0]
 
 
-
-
-
-
 @app.route("/", methods=["GET", "POST"])
 def index():
-    input_data = []
-    data_input = []
+#     input_data = []
+#     data_input = []
 
     if request.method == "POST": 
 
@@ -42,7 +32,7 @@ def index():
         thalach = request.form["thalach"]
         exang = request.form["exang"]
 
-        input_data.append([age, sex, cp, fbs, trestbps, chol, thalach, exang])
+#         input_data.append([age, sex, cp, fbs, trestbps, chol, thalach, exang])
         
         # input_data = pd.DataFrame(
         #     {
@@ -58,12 +48,25 @@ def index():
         #     index=[0],
         # )
         
-        for i in input_data:
-            for d in i:
-                # print(type(d))
-                e = int(d)
-                # print(type(d))
-                data_input.append(e)
+        data_input = pd.DataFrame(
+            {
+                "age": age,
+                "sex": sex,
+                "cp": cp,
+                "trestbps": trestbps,
+                "chol": chol,
+                "fbs": fbs,
+                "thalach": thalach,
+                "exang": exang,
+            })
+        
+        
+#         for i in input_data:
+#             for d in i:
+#                 # print(type(d))
+#                 e = int(d)
+#                 # print(type(d))
+#                 data_input.append(e)
         
         data = predict_heart_disease(data_input)
 
