@@ -91,7 +91,8 @@ def index():
                 if key == "exang": 
                     data_input.update(key, value)
     
-    
+        data_input = pd.DataFrame(data_input)
+        
         data = predict_heart_disease(data_input)
 
         if data == 1:
