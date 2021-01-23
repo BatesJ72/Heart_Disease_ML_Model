@@ -38,10 +38,26 @@ def index():
         exang = request.form["exang"]
 
         input_data.append([age, sex, cp, fbs, trestbps, chol, thalach, exang])
-    
+        
+        # input_data = pd.DataFrame(
+        #     {
+        #         "age": 65,
+        #         "sex": "male",
+        #         "cp": "asymptomatic",
+        #         "trestbps": 110,
+        #         "chol": 264,
+        #         "fbs": "yes",
+        #         "thalach": 131,
+        #         "exang": "yes",
+        #     },
+        #     index=[0],
+        # )
+        
         for i in input_data:
             for d in i:
+                # print(type(d))
                 e = int(d)
+                # print(type(d))
                 data_input.append(e)
         
         data = predict_heart_disease(data_input)
@@ -54,6 +70,7 @@ def index():
         return render_template("results.html", display = "block", data=data)
     else: 
         return render_template("results.html", display = "none")
+
 
 @app.route("/visuals")
 def visual():
