@@ -19,7 +19,7 @@ def predict_heart_disease(data_input):
 @app.route("/", methods=["GET", "POST"])
 def index():
 #     input_data = []
-#     data_input = []
+    data_input = []
 
     if request.method == "POST": 
 
@@ -48,7 +48,7 @@ def index():
         #     index=[0],
         # )
         
-        data_input = pd.DataFrame(
+        input_data.update(
             {
                 "age": age,
                 "sex": sex,
