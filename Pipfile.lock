@@ -3,10 +3,10 @@
         "hash": {
             "sha256": "0b2d4a73aa759c04170c5e2fb7fa07da97eff1ee64d577fbc572b356254f93a1"
         },
-        // "pipfile-spec": 6,
-        // "requires": {
-        //     "python_version": "3.9"
-        // },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.9"
+        },
         "sources": [
             {
                 "name": "pypi",
