@@ -7,12 +7,10 @@ verify_ssl = true
 
 [packages]
 flask = "*"
+gunicorn = "*"
+scikit-learn = "==0.23.2"
 pandas = "*"
-scikit-learn = "==0.24.0"
-joblib = "==1.0.0"
-image = "*"
-pillow = "*"
-plotly = "*"
+joblib = "*"
 
 [requires]
 python_version = "3.7"
