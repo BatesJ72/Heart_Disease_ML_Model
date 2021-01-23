@@ -24,6 +24,9 @@ df = (
 # rename exang: exercise induced angina (1 = yes; 0 = no)
 df = df.assign(exang=lambda df: df["exang"].replace({0: "no", 1: "yes"}))
 
+# rename sex
+df = df.assign(sex=lambda df: df["sex"].replace({0: "female", 1: "male"}))
+
 # rename fbs: (fasting blood sugar > 120 mg/dl) (1 = true; 0 = false)
 df = df.assign(fbs=lambda df: df["fbs"].replace({0: "false", 1: "true"}))
 
@@ -42,7 +45,7 @@ df = df.assign(
 # Set x and y
 target = "condition"
 
-y = df["condition"].values
+y = df["condition"]
 X = df.drop("condition", axis=1)
 
 cf = ColumnTransformer(
