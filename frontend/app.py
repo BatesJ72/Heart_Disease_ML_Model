@@ -18,8 +18,8 @@ def predict_heart_disease(data_input):
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-#     input_data = []
-    data_input = []
+    input_data = {}
+    data_input = {}
 
     if request.method == "POST": 
 
@@ -68,6 +68,30 @@ def index():
 #                 # print(type(d))
 #                 data_input.append(e)
         
+        for i in input_data:
+            for key, value in i.items():
+                if key == 'age':
+                    value = int(value)
+                    data_input.append(value)
+                if key == "sex":
+                    data_input.append(value)
+                if key == "cp": 
+                    data_input.append(value)
+                if key == "trestbps":
+                    value = int(value)
+                    data_input.append(value)
+                if key == "chol":
+                    value = int(value)
+                    data_input.append(value)
+                if key == "fbs": 
+                    data_input.append(value)
+                if key == "thalach":
+                    value = int(value)
+                    data_input.append(value)
+                if key == "exang": 
+                    data_input.append(value)
+    
+    
         data = predict_heart_disease(data_input)
 
         if data == 1:
