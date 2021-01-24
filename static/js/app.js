@@ -4925,7 +4925,7 @@ let scatterChol = withHD.map(d => d.chol)
 let scatterAgeNoDisease = withoutHD.map(d => d.age)
 let scatterCholNoDisease = withoutHD.map(d => d.chol)
 
-let pageLayout
+
 
 let plotLayoutAge = {
   title: "Age and Heart Disease",
@@ -4976,7 +4976,7 @@ yaxis: {
 }
 
 let plotLayoutCholAge = {
-  title: "Cholesterol and Heart Disease",
+  title: "Age and Cholesterol",
   xaxis: {
     title: {
       text: 'Age',
@@ -5015,8 +5015,8 @@ function updatePage(){
     name = "Total with Heart Disease",
     name2 = "Total Surveyed",
     xAxis = {"title" : 'Age'}
-    type = "line",
-    mode = "lines",
+    type = "bar",
+    mode = "markers",
     pageLayout = plotLayoutAge
   }
 
@@ -5028,8 +5028,8 @@ function updatePage(){
     name = "Total with Heart Disease",
     name2 = "Total Surveyed",
     xAxis = {"title" : 'Cholesterol Level'}
-    type = "line",
-    mode = "lines",
+    type = "bar",
+    mode = "markers",
     pageLayout = plotLayoutChol
   }
 
@@ -5075,7 +5075,29 @@ Plotly.newPlot("myPlot", plotData, pageLayout)
 
 
 
-
+let pageLayout = {
+  title: "Age and Heart Disease",
+  xaxis: {
+    title: {
+      text: 'Age',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'Number Surveyed',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+}
 
 
 let trace1 = { 
