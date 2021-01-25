@@ -4753,122 +4753,398 @@ data = [
     }
   ]
 
-//   let plotLayout = {
-//     title: "Sex and Heart Disease",
-//     xaxis: {
-//       title: {
-//         text: 'Sex',
-//         font: {
-//           family: 'Courier New, monospace',
-//           size: 18,
-//           color: '#7f7f7f'
-//         }
-//       },
-//     },
-//     yaxis: {
-//       title: {
-//         text: 'Number of Individuals',
-//         font: {
-//           family: 'Courier New, monospace',
-//           size: 18,
-//           color: '#7f7f7f'
-//         }
-//       },
-//     },
-//   }
 
+let ageLayout = {
+  title: "Age and Heart Disease",
+  xaxis: {
+    title: {
+      text: 'Age',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'Number of Individuals',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+}
+let cholLayout = {
+  title: "Cholesterol and Heart Disease",
+  xaxis: {
+    title: {
+      text: 'Cholesterol Level',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'Number of Individuals',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+}
 
-let plotLayout = {
-    title: "Sex and Heart Disease"
+let sexLayout = {
+  title: "Sex and Heart Disease",
+  xaxis: {
+    tickmode: "array",
+    tickvals: [.25,.75],
+    ticktext:['Women', "Men"],
+    title: {
+      text: 'Sex',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'Number of Individuals',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+}
+
+let cpLayout = {
+  title: "Chest Pain and Heart Disease",
+  xaxis: {
+    tickmode: "array",
+    tickvals: [0,1,2,3],
+    ticktext:['typical angina', "atypical angina", "non-anginal pain", "asymptomatic"],
+    title: {
+      text: 'Chest Pain Type',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'Number of Individuals',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+}
+
+let trestbpsLayout = {
+  title: "Rusting Blood Pressure and Heart Disease",
+  xaxis: {
+    
+    title: {
+      text: 'Resting Blood Pressure',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'Number of Individuals',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+}
+
+Layout = {
+  title: "Chest Pain and Heart Disease",
+  xaxis: {
+    tickmode: "array",
+    tickvals: [0,1,2,3],
+    ticktext:['typical angina', "atypical angina", "non-anginal pain", "asymptomatic"],
+    title: {
+      text: 'Chest Pain Type',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
+  yaxis: {
+    title: {
+      text: 'Number of Individuals',
+      font: {
+        family: 'Courier New, monospace',
+        size: 18,
+        color: '#7f7f7f'
+      }
+    },
+  },
 }
 
 
-let sex = data.map(d => d.sex)
+let age = data.map(d => d.age)
+let chol = data.map(d => d.chol)
+let cp = data.map(d => d.cp)
+let trestbps = data.map(d => d.trestbps)
 
-let condition = data.map(d => d.condition)
+
+let noCondition = data.filter(d => d.condition ===0)
+let condition = data.filter(d => d.condition ===1)
 
 
+ 
 let femaleData = data.filter(d => d.sex === 0)
 
-let fmCondition = data.filter(d => d.condition === 1)
-
-let femaleCondition = fmCondition.map(d => d.condition)
-
-let fmNoCondition = femaleData.filter(d => d.condition === 0)
-
-let femaleNoCondition = fmNoCondition.map(d => d.condition)
- 
-
 let maleData = data.filter(d => d.sex === 1)
+
+let maleCondition = maleData.filter(d =>d.condition === 1)
+
+let maleNoCondition = maleData.filter(d =>d.condition === 0)
+
+let femaleCondition = femaleData.filter(d =>d.condition === 1)
+
+let femaleNoCondition = femaleData.filter(d =>d.condition === 0)
 
 let male = maleData.map(d => d.sex)
 
 let female = femaleData.map(d => d.sex)
 
-let mCondition = data.filter(d => d.condition === 1)
-
-let maleCondition = mCondition.map(d => d.condition)
-
-let mNoCondition = maleData.filter(d => d.condition === 0)
 
 
 
-function noConditionCounter(inputs) {
-    let counter = 0;
-    for (const input of inputs) {
-      if (input.status === '0') counter += 1;
-    }
+d3.selectAll("body").on("change", updatePage);
 
-    return counter;
-  }
+function updatePage(){
+  let dropdownmenu = d3.selectAll("#visualDropDown").node();
+  let dropdownID = dropdownmenu.id;
+  let selectedOption = dropdownmenu.value;
+
+  let name = "Heart Disease"
+  let name2 = "No Heart Disease"
   
-noConditionCounter(mNoCondition);
+  if (selectedOption === "sex") {
+    type = "histogram"
+    
 
-let maleNoConditionFinal  = mNoCondition.length;
+    let trace1 = {
+        type: "histogram", 
+        x: male,
+        y: maleCondition,
+        name: "Heart Disease",
+        xaxis: "men",
+        marker: {color: "orange"}
+        }
 
-let femaleNoConditionFinal = fmNoCondition.length;
+    let trace2 = { 
+        type: "histogram",
+        x: male,
+        y: maleNoCondition,
+        name: "No Heart Disease",
+        marker: {color: "blue"}
+        }
 
-console.log(maleNoConditionFinal)
+    let trace3 = {
+        type: "histogram", 
+        x: female,
+        y: femaleCondition,
+        xaxis: "Women",
+        showlegend: false,
+        marker: {color: "orange"}
 
-console.log(femaleNoConditionFinal)
+        }
+
+    let trace4 = { 
+        type: "histogram",
+        x: female,
+        y: femaleNoCondition,
+        showlegend: false,
+        marker: {color: "blue"}
+
+        }
+
+    plotData = [trace1,trace2,trace3,trace4],
+    pageLayout = sexLayout
+   
+  }
+
+  else if (selectedOption === "age") {
+    type = "histogram"
+
+    let trace1 = {
+      type: "histogram", 
+      x: age,
+      y: condition,
+      name: "Heart Disease",
+      xaxis: "men",
+      marker: {color: "orange"}
+      }
+
+  let trace2 = { 
+      type: "histogram",
+      x: age,
+      y: noCondition,
+      name: "No Heart Disease",
+      marker: {color: "blue"}
+      }
+
+  plotData = [trace1,trace2],
+  pageLayout = ageLayout
+  }
+
+  else if (selectedOption === "trestbps") {
+    type = "histogram"
+
+    let trace1 = {
+      type: "histogram", 
+      x: trestbps,
+      y: condition,
+      name: "Heart Disease",
+  
+      marker: {color: "orange"}
+      }
+
+  let trace2 = { 
+      type: "histogram",
+      x: trestbps,
+      y: noCondition,
+      name: "No Heart Disease",
+      marker: {color: "blue"}
+      }
+
+  plotData = [trace1,trace2],
+  pageLayout = trestbpsLayout
+  }
 
 
-// for (maleNoConditionLoop = 0; maleNoConditionLoop < mNoCondition.length; maleNoConditionLoop++)
+  else if (selectedOption === "chol") {
+    type = "histogram"
+  
 
+    let trace1 = {
+      type: "histogram", 
+      x: chol,
+      y: condition,
+      name: "Heart Disease",
+      xaxis: "men",
+      marker: {color: "orange"}
+      }
 
-// let maleNoCondition = mNoCondition.map(d => d.condition)
+  let trace2 = { 
+      type: "histogram",
+      x: chol,
+      y: noCondition,
+      name: "No Heart Disease",
+      marker: {color: "blue"}
+      }
 
+  plotData = [trace1,trace2],
+  pageLayout = cholLayout
+  }
 
+  else if (selectedOption === "cp") {
+    type = "histogram"
+  
 
-let trace1 = {
-    type: "bar", 
-    x: male,
-    y: maleCondition,
-    name: "Men with Heart Disease"
+    let trace1 = {
+      type: "histogram", 
+      x: cp,
+      y: condition,
+      name: "Heart Disease",
+      xaxis: "men",
+      marker: {color: "orange"}
+      }
+
+  let trace2 = { 
+      type: "histogram",
+      x: cp,
+      y: noCondition,
+      name: "No Heart Disease",
+      marker: {color: "blue"}
+      }
+
+  plotData = [trace1,trace2],
+  pageLayout = cpLayout
+  
     }
 
-let trace2 = { 
-    type: "bar",
-    x: male,
-    y: maleNoConditionFinal,
-    name: "Men without Heart Disease"
-    }
-
-let trace3 = {
-    type: "bar", 
-    x: female,
-    y: femaleCondition,
-    name: "Women with Heart Disease"
-    }
-
-let trace4 = { 
-    type: "bar",
-    x: female,
-    y: femaleNoConditionFinal,
-    name: "Women without Heart Disease"
-    }
 
 
-let plotData = [trace1, trace2, trace3, trace4]
 
-Plotly.newPlot("myPlot", plotData, plotLayout)
+Plotly.newPlot("myPlot", plotData, pageLayout)
+
+}  
+
+
+// default
+  type = "histogram"
+  
+
+  let trace1 = {
+      type: "histogram", 
+      x: male,
+      y: maleCondition,
+      name: "Heart Disease",
+      xaxis: "men",
+      marker: {color: "orange"}
+      }
+
+  let trace2 = { 
+      type: "histogram",
+      x: male,
+      y: maleNoCondition,
+      name: "No Heart Disease",
+      marker: {color: "blue"}
+      }
+
+  let trace3 = {
+      type: "histogram", 
+      x: female,
+      y: femaleCondition,
+      xaxis: "Women",
+      showlegend: false,
+      marker: {color: "orange"}
+
+      }
+
+  let trace4 = { 
+      type: "histogram",
+      x: female,
+      y: femaleNoCondition,
+      showlegend: false,
+      marker: {color: "blue"}
+
+      }
+
+      plotData = [trace1,trace2,trace3,trace4],
+      pageLayout = sexLayout
+     
+  
+  
+  
+  Plotly.newPlot("myPlot", plotData, pageLayout)
