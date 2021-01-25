@@ -5078,7 +5078,7 @@ data = [
 
     let trace1 = { 
       x: scatterAge,
-      y: scatterCholNoDisease,
+      y: scatterChol,
       name: "Heart Disease",
       mode: 'markers',
       type: 'scatter'
@@ -5086,7 +5086,7 @@ data = [
 
     let trace2 = { 
         x: scatterAge,
-        y: scatterChol,
+        y: scatterCholNoDisease,
         name: "No Heart Disease",
         mode: 'markers',
         type: 'scatter'
