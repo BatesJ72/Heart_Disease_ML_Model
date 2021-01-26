@@ -26,19 +26,7 @@ def index():
         thalach = request.form["thalach"]
         exang = request.form["exang"]
 
-        data = predict_heart_disease(pd.DataFrame(
-        {
-            "age": age, 
-            "sex": sex, 
-            "cp": cp, 
-            "fbs": fbs, 
-            "trestbps": trestbps, 
-            "chol": chol, 
-            "thalach": thalach, 
-            "exang": exang,
-        },
-        index=[0],
-        ))
+        data = predict_heart_disease(pd.DataFrame({"age": age, "sex": sex, "cp": cp, "fbs": fbs, "trestbps": trestbps, "chol": chol, "thalach": thalach, "exang": exang,}, index=[0]))
 
 
         if data == 1:
