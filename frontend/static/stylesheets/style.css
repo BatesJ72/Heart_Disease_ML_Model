@@ -121,8 +121,9 @@ border-radius: 8px;}
 
 .visual-box {
     margin-top: 100px;
-    background-color: darkgray;
+    background-color: white;
     padding: 20px;
+    border-radius: 8px;
 }
 
 .visual-box h2 {
