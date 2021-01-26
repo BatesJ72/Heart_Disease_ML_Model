@@ -8,7 +8,7 @@ import plotly
 app = Flask(__name__)
 
 # ML Model
-clf = joblib.load(os.path.join("..", "backend", "clf.joblib"))
+clf = joblib.load(os.path.join("backend", "clf.joblib"))
 
 def predict_heart_disease(data_input):
     return clf.predict(data_input)
