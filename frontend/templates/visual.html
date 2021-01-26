@@ -5,8 +5,8 @@
                 <div class="data-info" id="info">
                         <h2>About our Data</h2>
                         <br>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet praesentium itaque consequuntur, neque minima laborum explicabo hic ad autem numquam omnis aliquid odio, quod nobis cupiditate perferendis aut illo quam!</p>
-                        
+                        <p> This dataset contains the medical records of 299 patients who had heart failure, collected during their follow-up period, where each patient profile has 13 clinical features. We decided to select only 8 of the feaures. The 4 features that we eliminated required a doctor’s interpretation of test results that could not be obtained outside of a lab, and we wanted to build something people could use as an at home diagnostic too
+                        </p>
                          <select name="visualDropDown" id="visualDropDown" class="visualDropDown">
                                 <option value="sex">Sex</option>
                                 <option value="cp">Chest Pain</option>
@@ -26,7 +26,7 @@
                 <div class="model-info">
                         <h2>About our Model</h2>
                         <br>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet praesentium itaque consequuntur, neque minima laborum explicabo hic ad autem numquam omnis aliquid odio, quod nobis cupiditate perferendis aut illo quam!</p>
+                        <p>After comparing decision trees, logistic regression, and random forests, we determined that a random forest model performed the best. We used a pipline for the categorical features (sex, exercise induced angina, chest pain type, and fasting blood sugar), created 10,000 trees (the default was only 100), and used criterion of gini over entropy. With these settings, the random forest model scored in the mid to upper 70s overall. While the logistic model had a slightly higher accuracy score (0.77 vs 0.76), the holistic view of the models led to the random forest being the superior one.</p>
                 </div>
 
         </div>
