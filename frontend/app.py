@@ -8,7 +8,7 @@ import plotly
 app = Flask(__name__)
 
 # ML Model
-clf = joblib.load(os.path.join("backend", "clf.joblib"))
+clf = joblib.load(os.path.join("..", "backend", "clf.joblib"))
 
 def predict_heart_disease(data_input):
     return clf.predict(data_input)
@@ -21,13 +21,42 @@ def index():
         age = request.form["age"]
         sex = request.form["sex"]
         cp = request.form["cp"]
-        fbs = request.form["fbs"]
         trestbps = request.form["trestbps"]
         chol = request.form["chol"]
+        fbs = request.form["fbs"]
         thalach = request.form["thalach"]
         exang = request.form["exang"]
 
-        data = predict_heart_disease(pd.DataFrame({"age": age, "sex": sex, "cp": cp, "fbs": fbs, "trestbps": trestbps, "chol": chol, "thalach": thalach, "exang": exang}, index=[0]))
+
+        input_ = (pd.DataFrame(
+            {
+                "age": age, 
+                "sex": sex, 
+                "cp": cp, 
+                "trestbps": trestbps, 
+                "chol": chol, 
+                "fbs": fbs, 
+                "thalach": thalach, 
+                "exang": exang
+            }, 
+            index=[0]))
+
+        print(input_)
+
+
+
+        data = predict_heart_disease(pd.DataFrame(
+            {
+                "age": age, 
+                "sex": sex, 
+                "cp": cp, 
+                "trestbps": trestbps, 
+                "chol": chol, 
+                "fbs": fbs, 
+                "thalach": thalach, 
+                "exang": exang
+            }, 
+            index=[0]))
 
 
         if data == 1:
