@@ -38,7 +38,7 @@ def index():
             "exang": exang,
         },
         index=[0],
-    ))
+        ))
 
 
         if data == 1:
@@ -54,6 +54,11 @@ def index():
 @app.route("/visuals")
 def visual():
     return render_template("visual.html")
+
+
+@app.route("/predict")
+def new_route():
+    return predict_heart_disease(input_data)
 
 
 if __name__ == "__main__":
