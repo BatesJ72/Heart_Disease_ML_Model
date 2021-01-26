@@ -7,21 +7,32 @@
 
 <div class="container index-header">
         <form method="POST" >
-                <h2>Enter your information below to calculate your risk of Heart Disease</h2>
+                
                 <br>
                 <div class="input-box">
+               
+                        <h2>Are you at risk of Heart Disease?</h2>
+                        <hr>
+                        <br>
+                <ul>
+                        <li>
                         <label for="age">How old are you?</label>
-                        
+                        <br>
                         <input type="number" id="age" name="age" required>
                         <br>
+                        </li>
+                        <li>
                         <label for="sex">What sex were you assigned at birth?</label>
-                        
+                        <br>
                         <select name="sex" id="sex">
                                 <option value=1>Male</option>
                                 <option value=0>Female</option>
                         </select>
                         <br>
+                        </li>
+                        <li>
                         <label for="cp">Are you experiencing chest pain? If so, what type?</label>
+                        <br>
                         <select name="cp" id="cp">
                                 <option value=0>Typical Angina</option>
                                 <option value=1>Atypical Angina</option>
@@ -29,14 +40,22 @@
                                 <option value=3>Aysmptomatic</option>
                         </select>
                         <br>
+                        </li>
+                        <li>
                         <label for="trestbps">What is your resting blood pressure?</label>
+                        <br>
                         <input type="number" id="trestbps" name="trestbps" required>
                         <br>
+                        </li>
+                        <li>
                         <label for="chol">What is your cholestoral level?</label>
+                        <br>
                         <input type="number" id="chol" name="chol" required>
                         <br>
-
+                        </li>
+                        <li>
                         <label for="fbs">Is your fasting blood pressure greater than 120? </label>
+                        <br>
                         <select id="fbs" name="fbs">
                                 <option value=1>Yes</option>
                                 <option value=0>No</option>
@@ -44,20 +63,26 @@
                         </select>
                         
                         <br>
+                        </li>
+                        <li>
                         <label for="thalach">What is your maximum heart rate achieved?</label>
-                        
+                        <br>
                         <input type="number" id="thalach" name="thalach" required>
                         <br>
+                        </li>
+                        <li>
                         <label for="exang">Do you experience exercise-induced angina? </label>
-                        
+                        <br>
                         <select id="exang" name="exang">
                                 <option value=1>Yes</option>
                                 <option value=0>No</option>
                                 <!-- <option value=3>Not Sure</option> -->
                         </select>
                         <br>
-
-                        <input type="submit" id="submit" name="submit" >
+                        </li>
+                        <br>
+                </ul>
+                        <input type="submit" id="submit" class="submit" name="submit" >
                 </div>
         </form>
 </div>

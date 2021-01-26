@@ -7,7 +7,8 @@
 
 main {
 
-    height: 120vh;
+    
+    background-color: rgb(226, 226, 226);
    
 
 }
@@ -21,8 +22,9 @@ main {
     position: fixed;
     top: 0px;
     width: 100vw;
-    background-color: white;
+    background-color: #4ec0cf;
     z-index: 1;
+    color: white;
 }
 
 nav ul {
@@ -33,18 +35,22 @@ nav li {
 
     list-style: none;
     display: inline;
+    position: relative;
+    text-transform: uppercase;
     
 }
 
+
 nav a {
-    color: darkgray;
+    color: white;
 }
 
 nav a:hover {
-    color: black;
+    color: rgb(61, 61, 61);
     text-decoration: none;
-    font-style: bold;
 }
+
+
 
 
 /* USER INPUT BOX 
@@ -56,31 +62,58 @@ nav a:hover {
 
 .container h2 {
     text-align: center;
-    background-color: white;
+    color:rgb(61, 61, 61);
     margin: 5px;
 }
 
 .input-box {
-    background-color: darkgray;
+    background-color: white;
     padding: 20px;
+    border-radius: 8px;
 
 }
+
+input {
+    border-radius: 8px;
+    background-color: #d9e0e0;
+    color:rgb(61, 61, 61);
+    border: none;
+    padding: 12px ;
+    text-decoration: none;
+}
+
+select {
+    border-radius: 8px;
+    background-color: #d9e0e0;
+    color:rgb(61, 61, 61);
+    border: none;
+    padding: 12px ;
+
+    text-decoration: none;
+}
+
+ul {
+    /* columns: 2; */
+    list-style: none;
+    
+  }
+
 
 /* RESULTS BOX
 +++++++++++++++++++++++++++++++++++++++++++++++++++ */
 
 .result-box h2 {
     
-    background-color: white;
+    color:rgb(61, 61, 61);
     margin: 5px;
 }
 
 
 .result-box {
-    background-color: darkgray;
+    background-color: white;
     padding: 20px;
     margin-top: 10px; 
-}
+border-radius: 8px;}
 
 
 /* VISUAL BOX 
@@ -111,5 +144,27 @@ nav a:hover {
 
 
 label {
+    color: rgb(61, 61, 61);
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+
+
+/* Input box 
+++++++++++++++++++++++++++++++++++++= */
+
+
+#submit {
+    border-radius: 8px;
+    background-color: #4ec0cf;
     color: white;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 35px;
+
+
+
 }

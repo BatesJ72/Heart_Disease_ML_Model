@@ -5033,7 +5033,7 @@ function updatePage(){
     pageLayout = plotLayoutChol
   }
 
-  else if (selectedOption === "age_vs_chol") {
+  else if (selectedOption === "chol") {
     x = scatterAge,
     x2 = scatterAgeNoDisease
     y = scatterCholNoDisease,
