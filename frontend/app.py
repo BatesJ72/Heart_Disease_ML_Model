@@ -8,7 +8,7 @@ import plotly
 app = Flask(__name__)
 
 # ML Model
-clf = joblib.load("clf.joblib")
+clf = joblib.load(os.path.join("backend", "clf.joblib"))
 def predict_heart_disease(data_input):
     return clf.predict(data_input)
 
@@ -26,7 +26,7 @@ def index():
         thalach = request.form["thalach"]
         exang = request.form["exang"]
 
-        data = predict_heart_disease(pd.DataFrame({"age": age, "sex": sex, "cp": cp, "fbs": fbs, "trestbps": trestbps, "chol": chol, "thalach": thalach, "exang": exang,}, index=[0]))
+        data = predict_heart_disease(pd.DataFrame({"age": age, "sex": sex, "cp": cp, "fbs": fbs, "trestbps": trestbps, "chol": chol, "thalach": thalach, "exang": exang}, index=[0]))
 
 
         if data == 1:
@@ -44,9 +44,6 @@ def visual():
     return render_template("visual.html")
 
 
-@app.route("/predict")
-def new_route():
-    return predict_heart_disease(input_data)
 
 
 if __name__ == "__main__":
