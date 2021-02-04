@@ -4943,7 +4943,7 @@ data = [
   
   
   
-  d3.selectAll("body2").on("change", updatePage);
+  d3.selectAll("#body2").on("change", updatePage);
   
   function updatePage(){
     let dropdownmenu = d3.selectAll("#visualDropDown").node();
