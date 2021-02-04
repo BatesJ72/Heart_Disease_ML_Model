@@ -4947,7 +4947,7 @@ data = [
   
   function updatePage(){
     let dropdownmenu = d3.selectAll("#visualDropDown").node();
-    // let dropdownID = dropdownmenu.id;
+    let dropdownID = dropdownmenu.id;
     let selectedOption = dropdownmenu.value;
   
     
