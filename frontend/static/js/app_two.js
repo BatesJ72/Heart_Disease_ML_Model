@@ -4943,7 +4943,7 @@ data = [
   
   
   
-  d3.selectAll("body").on("change", updatePage);
+  d3.selectAll("body").filter(".viz").on("change", updatePage);
   
   function updatePage(){
     let dropdownmenu = d3.selectAll("#visualDropDown").node();
@@ -5109,44 +5109,44 @@ data = [
 
   
   // default
-//   let trace1 = {
-//     type: "histogram", 
-//     x: male,
-//     y: maleCondition,
-//     name: "Heart Disease",
-//     xaxis: "men",
-//     marker: {color: "orange"}
-//     }
+  let trace1 = {
+    type: "histogram", 
+    x: male,
+    y: maleCondition,
+    name: "Heart Disease",
+    xaxis: "men",
+    marker: {color: "orange"}
+    }
 
-// let trace2 = { 
-//     type: "histogram",
-//     x: male,
-//     y: maleNoCondition,
-//     name: "No Heart Disease",
-//     marker: {color: "blue"}
-//     }
+let trace2 = { 
+    type: "histogram",
+    x: male,
+    y: maleNoCondition,
+    name: "No Heart Disease",
+    marker: {color: "blue"}
+    }
 
-// let trace3 = {
-//     type: "histogram", 
-//     x: female,
-//     y: femaleCondition,
-//     xaxis: "Women",
-//     showlegend: false,
-//     marker: {color: "orange"}
+let trace3 = {
+    type: "histogram", 
+    x: female,
+    y: femaleCondition,
+    xaxis: "Women",
+    showlegend: false,
+    marker: {color: "orange"}
 
-//     }
+    }
 
-// let trace4 = { 
-//     type: "histogram",
-//     x: female,
-//     y: femaleNoCondition,
-//     showlegend: false,
-//     marker: {color: "blue"}
+let trace4 = { 
+    type: "histogram",
+    x: female,
+    y: femaleNoCondition,
+    showlegend: false,
+    marker: {color: "blue"}
 
-//     }
+    }
 
-// plotData = [trace1,trace2,trace3,trace4],
-// pageLayout = sexLayout
+plotData = [trace1,trace2,trace3,trace4],
+pageLayout = sexLayout
     
     
-// Plotly.newPlot("myPlot", plotData, pageLayout)
+Plotly.newPlot("myPlot", plotData, pageLayout)
