@@ -88,6 +88,72 @@
 </div>
 
 
+ <!-- <div name="viz" id="viz" class="viz"> -->
+        <div class="container visual-box">
+                <div class="data-info" id="info">
+                        <h2>About our Data</h2>
+                        <br>
+                        <p> This dataset contains the medical records of 299 patients who had heart failure, collected during their follow-up period, where each patient profile has 13 clinical features. We decided to select only 8 of the feaures. The 4 features that we eliminated required a doctor’s interpretation of test results that could not be obtained outside of a lab, and we wanted to build something people could use as an at home diagnostic tool. 
+                                <br> The data is balanced regarding the target (160 people did not have heart disease, and 137 did), and there is a standard distribution around age 60. 
+                        </p>
+                         <select name="visualDropDown" id="visualDropDown" class="visualDropDown">
+                                <option value="sex">Sex</option>
+                                <option value="cp">Chest Pain</option>
+                                <option value="ageChol">Cholesterol</option>
+                        </select>
+                        <br>
+                        <br>
+                        <div id="myPlot"></div>
+
+                </div>
+
+
+                <br>
+                <br>
+
+
+                <div class="model-info">
+                        <h2>About our Model</h2>
+                        <br>
+                        <p>After comparing decision trees, logistic regression, and random forests, we determined that a random forest model performed the best. We used a pipline for the categorical features (sex, exercise induced angina, chest pain type, and fasting blood sugar), created 10,000 trees (the default was only 100), and used criterion of gini over entropy. With these settings, the random forest model scored in the mid to upper 70s overall. While the logistic model had a slightly higher accuracy score (0.77 vs 0.76), the holistic view of the models led to the random forest being the superior one.
+                                <br> <br><br><h2> Data Dictionary</h2> <br> 
+                                There are 13 attributes <br> 
+                                
+                                •	age: age in years <br> 
+                                •	sex: sex (1 = male; 0 = female) <br> 
+                                •	cp: chest pain type <br> 
+                                       o	Value 0: typical angina <br> 
+                                       o	Value 1: atypical angina <br> 
+                                       o	Value 2: non-anginal pain <br> 
+                                       o	Value 3: asymptomatic <br> 
+                                •	trestbps: resting blood pressure (in mm Hg on admission to the hospital) <br> 
+                                •	chol: serum cholestoral in mg/dl <br> 
+                                •	fbs: (fasting blood sugar > 120 mg/dl) (1 = true; 0 = false) <br> 
+                                •	thalach: maximum heart rate achieved <br> 
+                                •	exang: exercise induced angina (1 = yes; 0 = no) <br> 
+                                •	condition: 0 = no disease, 1 = disease <br> 
+                                <br> <br> 
+                                
+                                <h2>Acknowledgements </h2><br> 
+                                Data posted on Kaggle: https://www.kaggle.com/ronitf/heart-disease-uci <br> 
+                                Description of the data above: https://www.kaggle.com/ronitf/heart-disease-uci/discussion/105877 <br> 
+                                Original data https://archive.ics.uci.edu/ml/datasets/Heart+Disease <br> 
+                                Creators: <br> 
+                                Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D. <br> 
+                                University Hospital, Zurich, Switzerland: William Steinbr <br> 
+                                Creators: <br> 
+                                Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D. <br> 
+                                University Hospital, Zurich, Switzerland: William Steinbrunn, M.D. <br> 
+                                University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D. <br> 
+                                V.A. Medical Center, Long Beach and Cleveland Clinic Foundation: Robert Detrano, M.D., Ph.D. <br> 
+                                Donor: David W. Aha (aha '@' ics.uci.edu) (714) 856-8779 <br> 
+                                
+                                </p>
+                </div>
+
+        </div>
+
+
 
 
 
