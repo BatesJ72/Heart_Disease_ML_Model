@@ -1,4 +1,4 @@
-# Heart Disease Machine Learning Project
+# Heart Disease Machine Learning Model
 
 This is a project we built to help someone self-diagnose their risk of developing heart disease. The website associated with this repo is: https://heart-disease-risk.herokuapp.com/
 
