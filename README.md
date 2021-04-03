@@ -9,3 +9,9 @@ After comparing decision trees, logistic regression, and random forests, we dete
 This dataset contains the medical records of 299 patients who had heart failure, collected during their follow-up period, where each patient profile has 13 clinical features. We decided to select only 8 of the features. The 4 features that we eliminated required a doctor’s interpretation of test results that could not be obtained outside of a lab, and we wanted to build something people could use as an at home diagnostic tool. The data is balanced regarding the target (160 people did not have heart disease, and 137 did), and there is a standard distribution around age 60.
 
 We coded in Python via Jupyter Notebook, taking advantage of the Pandas and SciKit Learn libraries. The frontend was coded in Javascript, and the app was launced via Heroku. 
+
+
+![image](https://user-images.githubusercontent.com/51967247/113465922-3b8c6e00-93fd-11eb-9e3a-ad51a15bd467.png)
+
+![image](https://user-images.githubusercontent.com/51967247/113465936-4d6e1100-93fd-11eb-9e59-ca5342f12f8c.png)
+
